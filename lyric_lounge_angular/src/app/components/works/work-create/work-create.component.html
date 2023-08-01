@@ -1,1 +1,7 @@
-<p>work-create works!</p>
+<div class="card">
+    <div class="card-body">
+      <textarea rows="10" [(ngModel)]="enteredValue"></textarea>
+      <button (click)="addWorks()">Save Works</button>
+      <p>{{ newWorks }}</p>
+    </div>
+  </div>

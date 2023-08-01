@@ -1,1 +1,28 @@
 <p>signup works!</p>
+<div classs="signupForm">
+    <div >
+        <form className='userForm'>
+            <label htmlFor='name'>Name / Alias: </label>
+            <input type='text' placeholder="Enter username / alias here">
+            <label htmlFor='photo_url'>Photo Link: </label>
+            <input type='text' placeholder="Enter photo url here">
+  
+            <label htmlFor='location'>Location: </label>
+            <input type='text' placeholder="Enter location">
+  
+            <label htmlFor='contact'>Preferred Contact: </label>
+            <input type='text' placeholder='Enter preferred contact here'>
+  
+            <label htmlFor='password'>Password: </label>
+            <input type='password' placeholder='Enter password here'>
+  
+            <label htmlFor='passwordValid'>Confirm Password: </label>
+            <input type='passwordValid' placeholder='Enter password here'>
+  
+            <div>
+                <button type="submit" className='createBtn'>Create New Account</button>
+                <button type="cancel" className='submit' id='cancelBtn' onClick={cancel}>Cancel</button>
+            </div>
+        </form>
+    </div>
+  </div>

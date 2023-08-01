@@ -1,1 +1,36 @@
 <p>login works!</p>
+<div>
+    <div className="loginForm" onSubmit="{handleSubmit}">
+      <h2>Welcome to Lyric Lounge, please login to continue:</h2>
+      <form className="loglogformform">
+        <label htmlFor="username">Username: </label>
+        <input
+          type="text"
+          placeholder="Enter username/alias here"
+          id="userName"
+          onChange="{handleChange}"
+          value="{formState.userName}"
+        />
+
+        <label htmlFor="password">Password: </label>
+        <input
+          type="password"
+          placeholder="Enter password here"
+          id="password"
+          onChange="{handleChange}"
+          value="{formState.password}"
+        />
+        <p className="invalid">
+          Username or password is incorrect. Please try again!
+        </p>
+        <button type="submit" className="submit">Log In</button>
+        <button type="reset" className="submit" id="resetBtn">
+          Forgot Password ?
+        </button>
+      </form>
+    </div>
+    <div className="lineBreak"></div>
+    <div>
+      <button className="createBtn" onClick="{create}">Create An Account</button>
+    </div>
+  </div>
