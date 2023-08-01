@@ -1,2 +1,10 @@
-<p>works-list works!</p>
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success">New Works</button>
+    </div>
+
+    <div class="row" *ngFor="let work of works">
+        {{ work.title }}
+    </div>
+</div>
 <app-work-create></app-work-create>
