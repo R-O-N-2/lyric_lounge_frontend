@@ -11,7 +11,7 @@ import { WorksService } from 'src/app/services/works.service';
 export class WorksListComponent implements OnInit{
   @Input() work?: Work;
   
-  constructor(private worksService: WorksService){}
+  constructor(){}
   
   ngOnInit(): void {
     // this.worksService.getWorks().subscribe({

@@ -13,6 +13,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { WorksListComponent } from './components/works/works-list/works-list.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { LoginComponent } from './components/login/login.component';
+import { WorkItemComponent } from './components/works/work-item/work-item.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { LoginComponent } from './components/login/login.component';
     WorksListComponent,
     WelcomeComponent,
     LoginComponent,
+    WorkItemComponent,
   ],
   imports: [
     BrowserModule,

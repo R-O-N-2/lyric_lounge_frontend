@@ -16,8 +16,7 @@ const routes: Routes = [
     component: WorksComponent,
     children: [],
   },
-  { path: 'works', component: WorksListComponent },
-  { path: 'create', component: WorksCreateComponent},
+  { path: 'works', component: WorksCreateComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 

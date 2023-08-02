@@ -1,18 +1,33 @@
 <div class="welcome row">
     <h1>Welcome To Lyric Lounge</h1>
-    <section class="col">
-      <h3>Get Started</h3>
-      <p>Login/ Signup to get started posting your lyrical works</p>
-      <button>Register</button>
-    </section>
-    <section class="col">
-      <h3>View Your Works</h3>
-      <p>View past works and create new ones</p>
-      <button routerLink="/list">View Works</button>
-    </section>
-    <section class="col">
-      <h3>Search Works</h3>
-      <p>View the works of other based on genre</p>
-      <button>Search</button>
-    </section>
+    <div class="container">
+      <div class="row">
+          <section class="col-3">
+              <h5 class="text-success">Genres</h5>
+              <ul class="list-group">
+                  <li class="list-group-item" *ngFor="let genre of genres">{{ genre.genreName }}</li>
+              </ul>
+          </section>
+          <section class="col-9">
+              <div class="d-flex justify-content-between align-items center pb2">
+                  <header>
+                      <span>Showing Results</span>
+                  </header>
+  
+                  <div class="d-flex mt-2">
+                      <input type="text" placeholder="Search" class="form-control me-2">
+                      <button class="btn btn-outline-success mx-2">Search</button>
+                      <button class="btn btn-outline-danger mx-2">Reset</button>
+                  </div>
+              </div>
+  
+              <!-- Creates a list of works to show to the users -->
+              <div class="row row-cols-3 g-3" *ngFor="let work of works">
+                  <app-works-list [work]="work"></app-works-list>
+              </div>
+          </section>
+      </div>
+  </div>
+  
+  
   </div>
