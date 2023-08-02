@@ -5,8 +5,7 @@ Lyric Lounge is a web application where creative minds can come together to publ
 Writing lyrics is an art, and Lyric Lounge is designed to empower artists by providing them with a platform to share their original works. The website allows users to create accounts, log in, and easily publish their lyrics. 
 
 
-Technologies Used
-
+## Technologies Used
 MEAN Stack:
 
 MongoDB: A NoSQL database used to store and manage user data and lyrics.
@@ -26,6 +25,8 @@ Git: Used for version control, allowing collaborative development and code manag
 Package Management:
 npm: Node Package Manager used to manage project dependencies.
 
+## Home Page (updates coming soon):
+![image](https://github.com/R-O-N-2/lyric_lounge_frontend/assets/132020474/1d3dae65-234c-4d8d-bab0-750c4797e910)
 
 
 Trello (whiteboard): https://trello.com/b/PZEWjBt6/lyric-lounge
