@@ -9,7 +9,7 @@ import { WorksService } from 'src/app/services/works.service';
   styleUrls: ['./works.component.scss']
 })
 export class WorksComponent {
-  works: Work[] = [];
+  works: Work[] = []
   genres: Genre[] = []
   
   constructor(private worksService: WorksService){}

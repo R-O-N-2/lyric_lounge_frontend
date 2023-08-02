@@ -1,29 +1,26 @@
-<div class="row" >
-    <div class="col-xs-10">
-        <app-work-create></app-work-create>
+<div class="row card">
+    <div class="col-xs-12">
+      <form (submit)="onAddWorks(worksForm)" #worksForm="ngForm">
+        <div class="row ">
+          <div class="col-md-5 form-group">
+            <label for="title">Title</label>
+            <input type="text" name="title" class="form-control" ngModel>
+          </div>
+          <div class="col-sm-2 form-group">
+            <label for="genre">Genre</label>
+            <input type="text" name="genre" class="form-control" ngModel>
+          </div>
+          <div class="col-md-5 form-group">
+            <label for="content">Content</label>
+            <textarea rows="6" name="content" class="form-control" ngModel></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <button class="btn btn-success" type="submit" >Add</button>
+            <button class="btn btn-danger" type="button">Delete</button>
+          </div>
+        </div>
+      </form>
     </div>
-    <hr>
-    <!-- Need to see your works and be able to edit them -->
-    <ul class="list-group">
-        <li *ngFor="let work of works">
-            <div class="row">
-                <div class="col-xs-12">
-                    <p> title</p>
-                    <p class="card-text"> content</p>
-                </div>        
-            </div>
-
-            <div class="row">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-sm">Edit</button>
-                </div>
-            </div>
-
-            <button class="btn btn-success">
-                <a routerLink="/create">New Works</a>
-            </button>
-        </li>
-    </ul>
-    
-    
-</div>
+  </div>

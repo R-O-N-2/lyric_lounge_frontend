@@ -20,10 +20,15 @@
             </div>
 
             <!-- Creates a list of works to show to the users -->
-            <div class="row row-cols-3 g-3" *ngFor="let work of works">
-                <app-works-list [work]="work"></app-works-list>
+            <div class="row row-cols-3 g-3">
+                <!-- <app-work-item></app-work-item> -->
+                <hr>
+                <app-works-list></app-works-list> 
             </div>
         </section>
     </div>
-</div>
+</div> 
+
+
+
 

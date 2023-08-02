@@ -8,7 +8,7 @@ import { Genre } from '../models/genre.model';
 })
 export class WorksService {
   baseUrl = 'http://localhost:3001/'
-
+  private works: Work[] =[]
 
   constructor(private http: HttpClient) { 
     
@@ -16,6 +16,11 @@ export class WorksService {
 
   getWorks() {
     return this.http.get<Work[]>(this.baseUrl + 'works');
+  }
+
+  addWorks(title:string, content:string, genre: string, user: string, id: string) {
+    const work: Work = {title: title, content: content, genre: genre, user: user, id: id}
+    this.works.push(work)
   }
 
   getWorksByUsername(username: string) {

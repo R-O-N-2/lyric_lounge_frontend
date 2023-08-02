@@ -9,19 +9,32 @@ import { WorksService } from 'src/app/services/works.service';
   styleUrls: ['./works-list.component.scss']
 })
 export class WorksListComponent implements OnInit{
-  @Input() work?: Work;
+  // @Input() work?: Work;
+  // @Input() works: Work[] = []
+  works: Work[] = []
   
-  constructor(){}
+  constructor(public worksService: WorksService){}
   
   ngOnInit(): void {
-    // this.worksService.getWorks().subscribe({
-    //   next: response => this.works = response,
-    //   error: error => console.log(error),
-    //   complete: () => {
-    //     console.log('request completed');
-    //     console.log('extra statment')
-    //   }
-    // })
+    this.worksService.getWorks().subscribe({
+    next: response => this.works = response,
+    error: error => console.log(error),
+    complete: () => {
+      console.log('request completed');
+      console.log('extra statment')
+    }
+  })
+  }
+
+  getWorks() {
+    return this.worksService.getWorks().subscribe({
+      next: response => this.works = response,
+      error: error => console.log(error),
+      complete: () => {
+        console.log('request completed');
+        console.log('extra statment')
+      }
+    })
   }
     //next: (response: any) => this.works = response,
 

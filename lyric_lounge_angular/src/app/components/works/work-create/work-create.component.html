@@ -1,7 +1,26 @@
-<div class="card">
-    <div class="card-body">
-      <textarea rows="10" [(ngModel)]="enteredValue"></textarea>
-      <button (click)="addWorks()">Save Works</button>
-      <p>{{ newWorks }}</p>
-    </div>
+<div class="row card">
+  <div class="col-xs-12">
+    <form #worksForm="ngForm">
+      <div class="row ">
+        <div class="col-md-5 form-group">
+          <label for="title">Title</label>
+          <input type="text" id="title" class="form-control">
+        </div>
+        <div class="col-sm-2 form-group">
+          <label for="genre">Genre</label>
+          <input type="text" id="genre" class="form-control">
+        </div>
+        <div class="col-md-5 form-group">
+          <label for="content">Content</label>
+          <input type="text" id="content" class="form-control">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button class="btn btn-success" type="submit" >Add</button>
+          <button class="btn btn-danger" type="button">Delete</button>
+        </div>
+      </div>
+    </form>
   </div>
+</div>

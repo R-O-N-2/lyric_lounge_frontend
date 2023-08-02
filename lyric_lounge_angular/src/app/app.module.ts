@@ -14,6 +14,7 @@ import { WorksListComponent } from './components/works/works-list/works-list.com
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { LoginComponent } from './components/login/login.component';
 import { WorkItemComponent } from './components/works/work-item/work-item.component';
+import { WorksService } from './services/works.service';
 
 @NgModule({
   declarations: [
