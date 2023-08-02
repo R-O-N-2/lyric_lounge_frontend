@@ -1,24 +1,29 @@
-
 <div class="row" >
-    <div class="col-xs-12">
-        <span class="header-image ">
-        </span>
+    <div class="col-xs-10">
+        <app-work-create></app-work-create>
     </div>
-    <div class="row">
-        <div class="col-xs-12">
-            <p> title</p>
-            <p class="card-text"> content</p>
-        </div>        
-    </div>
+    <hr>
+    <!-- Need to see your works and be able to edit them -->
+    <ul class="list-group">
+        <li *ngFor="let work of works">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p> title</p>
+                    <p class="card-text"> content</p>
+                </div>        
+            </div>
 
-    <div class="row">
-        <div class="btn-group">
-            <button type="button" class="btn btn-sm">Edit</button>
-        </div>
-    </div>
+            <div class="row">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm">Edit</button>
+                </div>
+            </div>
 
-    <button class="btn btn-success">
-        <a routerLink="/create">New Works</a>
-    </button>
+            <button class="btn btn-success">
+                <a routerLink="/create">New Works</a>
+            </button>
+        </li>
+    </ul>
+    
     
 </div>

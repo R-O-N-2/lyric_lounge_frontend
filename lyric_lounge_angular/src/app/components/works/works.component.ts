@@ -9,5 +9,36 @@ import { WorksService } from 'src/app/services/works.service';
   styleUrls: ['./works.component.scss']
 })
 export class WorksComponent {
+  works: Work[] = [];
+  genres: Genre[] = []
   
+  constructor(private worksService: WorksService){}
+  
+  ngOnInit(): void {
+    
+   this.getWorks();
+   this.getGenres();
+  }
+
+  getWorks() {
+     this.worksService.getWorks().subscribe({
+      next: response => this.works = response,
+      error: error => console.log(error),
+      complete: () => {
+        console.log('request completed');
+        console.log('extra statment')
+      }
+    })
+  }
+
+  getGenres() {
+    this.worksService.getGenres().subscribe({
+      next: response => this.genres = response,
+      error: error => console.log(error),
+      complete: () => {
+        console.log('request completed');
+        console.log('extra statment')
+      }
+    })
+  }
 }

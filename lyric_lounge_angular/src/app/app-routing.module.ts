@@ -6,6 +6,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { WorksComponent } from './components/works/works.component';
 import { WorksListComponent } from './components/works/works-list/works-list.component';
 import { WorksCreateComponent } from './components/works/work-create/work-create.component'
+import { WorkItemComponent } from './components/works/work-item/work-item.component';
 
 const routes: Routes = [
   { path: 'home', component: WelcomeComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
     component: WorksComponent,
     children: [],
   },
-  { path: 'works', component: WorksCreateComponent},
+  { path: 'works', component: WorkItemComponent},
+  { path: 'create', component: WorksCreateComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 

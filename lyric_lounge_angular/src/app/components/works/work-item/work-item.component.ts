@@ -1,10 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Work } from 'src/app/models/works.model';
+import { WorksService } from 'src/app/services/works.service';
 
 @Component({
   selector: 'app-work-item',
   templateUrl: './work-item.component.html',
   styleUrls: ['./work-item.component.scss']
 })
-export class WorkItemComponent {
+export class WorkItemComponent implements OnInit{
+  works: Work[] = []
 
+  constructor(private workService: WorksService) {}
+    ngOnInit(): void {
+    }
+
+
+    // Create methos that pulls user specific works
+    // getUserWorks() {
+    //   this.workService.getWorksByUsername().subscribe({
+    //     next: response => console.log(response),
+    //     error: error => console.log(error),
+    //     complete: () => {
+    //       console.log('received user works');
+    //       console.log('works nigga');
+    //     }
+    //   })
+    // }
 }
