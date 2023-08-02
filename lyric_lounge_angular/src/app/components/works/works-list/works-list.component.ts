@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Work } from 'src/app/models/works.model';
 import { WorksService } from 'src/app/services/works.service';
 
@@ -12,6 +13,7 @@ export class WorksListComponent implements OnInit{
   // @Input() work?: Work;
   // @Input() works: Work[] = []
   works: Work[] = []
+  private postSub: Subscription;
   
   constructor(public worksService: WorksService){}
   
@@ -24,6 +26,8 @@ export class WorksListComponent implements OnInit{
       console.log('extra statment')
     }
   })
+
+  this.postSub=this.worksService.addWorks()
   }
 
   getWorks() {

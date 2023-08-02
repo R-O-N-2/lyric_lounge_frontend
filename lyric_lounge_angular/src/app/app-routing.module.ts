@@ -17,6 +17,10 @@ const routes: Routes = [
     component: WorksComponent,
     children: [],
   },
+  {
+   path: 'works/:id',
+   component: WorksComponent,
+  },
   { path: 'works', component: WorkItemComponent},
   { path: 'create', component: WorksCreateComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
