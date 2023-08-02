@@ -1,4 +1,5 @@
-<div class="card" *ngFor="let work of works">
+<div *ngIf="works">
+    <div class="card" *ngFor="let work of works">
     <div class="card-header justify-content-center" >
         <span class="header-image ">
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-book-fill" viewBox="0 0 16 16">
@@ -19,6 +20,11 @@
         <a routerLink="/create"></a>
         New Works</button>
 </div>
+</div>
+<p *ngIf="works.length <= 0">
+    No works
+</p>
+
 
 
 

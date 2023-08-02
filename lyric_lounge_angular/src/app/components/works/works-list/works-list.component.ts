@@ -13,7 +13,7 @@ export class WorksListComponent implements OnInit{
   // @Input() work?: Work;
   // @Input() works: Work[] = []
   works: Work[] = []
-  private postSub: Subscription;
+  // private postSub: Subscription;
   
   constructor(public worksService: WorksService){}
   
@@ -27,7 +27,6 @@ export class WorksListComponent implements OnInit{
     }
   })
 
-  this.postSub=this.worksService.addWorks()
   }
 
   getWorks() {

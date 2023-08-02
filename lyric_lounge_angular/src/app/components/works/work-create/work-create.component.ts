@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Work } from 'src/app/models/works.model';
+import { WorksService } from 'src/app/services/works.service';
 
 @Component({
   selector: 'app-work-create',
@@ -8,15 +10,21 @@ import { Work } from 'src/app/models/works.model';
 })
 export class WorksCreateComponent implements OnInit {
 @Input() work?:Work
+works: Work[] = []
+// private postSub: Subscription;
 
-  enteredValue = '';
+  enteredV  = '';
   newWorks = 'Blah';
 
-  constructor() {}
+  constructor(public worksService: WorksService){}
 
   ngOnInit(): void {}
 
   addWorks() {
-    this.newWorks = this.enteredValue;
+    const work = {
+
+    }
+    // this.postSub=this.worksService.addWorks()
+
   }
 }

@@ -25,7 +25,7 @@ export class WorksService {
     this.http.post<Work>(this.baseUrl + 'works', work).subscribe((responseData) => {
       console.log(responseData);
       this.works.push(work);
-      this.worksUpdated.next([...this])
+      this.worksUpdated.next([...this.works])
     });
     
   }

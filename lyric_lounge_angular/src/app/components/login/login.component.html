@@ -5,10 +5,8 @@
         <label htmlFor="username">Username: </label>
         <input
           type="text"
-          placeholder="Enter username/alias here"
+          placeholder="Enter username here"
           id="userName"
-          onChange="{handleChange}"
-          value="{formState.userName}"
         />
 
         <label htmlFor="password">Password: </label>
@@ -16,8 +14,6 @@
           type="password"
           placeholder="Enter password here"
           id="password"
-          onChange="{handleChange}"
-          value="{formState.password}"
         />
         <p className="invalid">
           Username or password is incorrect. Please try again!
@@ -30,6 +26,6 @@
     </div>
     <div className="lineBreak"></div>
     <div>
-      <button className="createBtn" onClick="{create}">Create An Account</button>
+      <button className="createBtn">Create An Account</button>
     </div>
   </div>

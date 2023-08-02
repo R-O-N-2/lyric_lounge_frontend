@@ -9,6 +9,7 @@ import { WorksCreateComponent } from './components/works/work-create/work-create
 import { WorkItemComponent } from './components/works/work-item/work-item.component';
 
 const routes: Routes = [
+  { path:'', component:LoginComponent },
   { path: 'home', component: WelcomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
@@ -23,7 +24,7 @@ const routes: Routes = [
   },
   { path: 'works', component: WorkItemComponent},
   { path: 'create', component: WorksCreateComponent},
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  // { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({
