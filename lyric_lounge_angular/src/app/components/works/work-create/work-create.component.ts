@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Work } from 'src/app/models/works.model';
 
 @Component({
   selector: 'app-work-create',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./work-create.component.scss'],
 })
 export class WorksCreateComponent implements OnInit {
+@Input() work?:Work
+
   enteredValue = '';
   newWorks = 'Blah';
 

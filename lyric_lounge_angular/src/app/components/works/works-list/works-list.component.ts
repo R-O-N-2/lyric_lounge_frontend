@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Work } from 'src/app/models/works.model';
 import { WorksService } from 'src/app/services/works.service';
 
@@ -9,19 +9,19 @@ import { WorksService } from 'src/app/services/works.service';
   styleUrls: ['./works-list.component.scss']
 })
 export class WorksListComponent implements OnInit{
-  works: any[] = [];
+  @Input() work?: Work;
   
-  constructor(private worksService: WorksService, private http: HttpClient){}
+  constructor(private worksService: WorksService){}
   
   ngOnInit(): void {
-    this.http.get('http://localhost:3001/works').subscribe({
-      next: (response: any) => console.log(response),
-      error: error => console.log(error),
-      complete: () => {
-        console.log('request completed');
-        console.log('extra statment')
-      }
-    })
+    // this.worksService.getWorks().subscribe({
+    //   next: response => this.works = response,
+    //   error: error => console.log(error),
+    //   complete: () => {
+    //     console.log('request completed');
+    //     console.log('extra statment')
+    //   }
+    // })
   }
     //next: (response: any) => this.works = response,
 
