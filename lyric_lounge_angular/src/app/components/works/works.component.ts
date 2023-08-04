@@ -6,39 +6,43 @@ import { WorksService } from 'src/app/services/works.service';
 @Component({
   selector: 'app-works',
   templateUrl: './works.component.html',
-  styleUrls: ['./works.component.scss']
+  styleUrls: ['./works.component.scss'],
 })
 export class WorksComponent {
-  works: Work[] = []
-  genres: Genre[] = []
-  
-  constructor(private worksService: WorksService){}
-  
+  works: Work[] = [];
+  genres: Genre[] = [
+    // { genreName: 'pop' },
+    // { genreName: 'hiphop' },
+    // { genreName: 'jazz' },
+    // { genreName: 'other' },
+  ];
+
+  constructor(private worksService: WorksService) {}
+
   ngOnInit(): void {
-    
-   this.getWorks();
-   this.getGenres();
+    this.getWorks();
+    this.getGenres();
   }
 
   getWorks() {
-     this.worksService.getWorks().subscribe({
-      next: response => this.works = response,
-      error: error => console.log(error),
+    this.worksService.getWorks().subscribe({
+      next: (response) => (this.works = response),
+      error: (error) => console.log(error),
       complete: () => {
         console.log('request completed');
-        console.log('extra statment')
-      }
-    })
+        console.log('extra statment');
+      },
+    });
   }
 
   getGenres() {
     this.worksService.getGenres().subscribe({
-      next: response => this.genres = response,
-      error: error => console.log(error),
+      next: (response) => (this.genres = response),
+      error: (error) => console.log(error),
       complete: () => {
         console.log('request completed');
-        console.log('extra statment')
-      }
-    })
+        console.log('extra statment');
+      },
+    });
   }
 }

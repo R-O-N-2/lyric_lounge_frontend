@@ -13,18 +13,15 @@ export class WorksCreateComponent implements OnInit {
 works: Work[] = []
 // private postSub: Subscription;
 
-  enteredV  = '';
-  newWorks = 'Blah';
+  enteredTitle = '';
+  enteredContent = ''
 
   constructor(public worksService: WorksService){}
 
   ngOnInit(): void {}
 
   addWorks() {
-    const work = {
 
-    }
-    // this.postSub=this.worksService.addWorks()
 
   }
 }

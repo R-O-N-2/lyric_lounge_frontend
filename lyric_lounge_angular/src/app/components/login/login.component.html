@@ -1,31 +1,35 @@
-<div>
-    <div className="loginForm" onSubmit="{handleSubmit}">
-      <h2>Welcome to Lyric Lounge, please login to continue:</h2>
-      <form className="loglogformform">
-        <label htmlFor="username">Username: </label>
+<div class="d-flex justify-content-center mt-5">
+  <div class="col-3">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="text-center mb-4">
+        <h1 class="mb-3">Login</h1>
+      </div>
+      <div class="form-floating mb-4">
         <input
-          type="text"
-          placeholder="Enter username here"
-          id="userName"
+        [class.is-invalid]="loginForm.get('email')?.touched && loginForm.get('email')?.invalid"
+          type="email"
+          class="form-control is-invalid"
+          id="floatingInput"
+          placeholder="Email"
+          formControlName="email"
         />
-
-        <label htmlFor="password">Password: </label>
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating mb-4">
         <input
           type="password"
-          placeholder="Enter password here"
-          id="password"
+          class="form-control"
+          id="floatingInput"
+          placeholder="Password"
+          formControlName="password"
         />
-        <p className="invalid">
-          Username or password is incorrect. Please try again!
-        </p>
-        <button type="submit" className="submit">Log In</button>
-        <button type="reset" className="submit" id="resetBtn">
-          Forgot Password ?
+        <label for="floatingInput">Password</label>
+      </div>
+      <div class="d-grid">
+        <button class="btn btn-lg btn-success mt-3" type="submit">
+          Sign In
         </button>
-      </form>
-    </div>
-    <div className="lineBreak"></div>
-    <div>
-      <button className="createBtn">Create An Account</button>
-    </div>
+      </div>
+    </form>
   </div>
+</div>

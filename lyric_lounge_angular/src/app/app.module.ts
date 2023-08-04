@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -15,6 +15,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { LoginComponent } from './components/login/login.component';
 import { WorkItemComponent } from './components/works/work-item/work-item.component';
 import { WorksService } from './services/works.service';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -33,8 +34,12 @@ import { WorksService } from './services/works.service';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  exports: [
+    ReactiveFormsModule
+  ],
+  providers: [AuthService, WorksService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

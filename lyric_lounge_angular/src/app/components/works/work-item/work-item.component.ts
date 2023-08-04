@@ -24,22 +24,6 @@ export class WorkItemComponent implements OnInit{
       if(form.invalid) {
         return
       }
-
       this.workService.addWorks(form.value.title, form.value.content, form.value.genre,'','')
-  
     }
-    
-
-
-    // Create methos that pulls user specific works
-    // getUserWorks() {
-    //   this.workService.getWorksByUsername().subscribe({
-    //     next: response => console.log(response),
-    //     error: error => console.log(error),
-    //     complete: () => {
-    //       console.log('received user works');
-    //       console.log('works nigga');
-    //     }
-    //   })
-    // }
 }
