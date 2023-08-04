@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { Work } from 'src/app/models/works.model';
+import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
 import { WorksService } from 'src/app/services/works.service';
 
 @Component({
@@ -8,20 +8,25 @@ import { WorksService } from 'src/app/services/works.service';
   templateUrl: './work-create.component.html',
   styleUrls: ['./work-create.component.scss'],
 })
-export class WorksCreateComponent implements OnInit {
-@Input() work?:Work
-works: Work[] = []
-// private postSub: Subscription;
-
+export class WorksCreateComponent {
   enteredTitle = '';
-  enteredContent = ''
+  enteredGenre = '';
+  enteredContent = '';
 
-  constructor(public worksService: WorksService){}
+  constructor(public worksService: WorksService) {}
 
-  ngOnInit(): void {}
+  // ngOnInit(): void {}
 
-  addWorks() {
-
-
+  addWork(form: NgForm) {
+    if (form.invalid) {
+      return;
+    }
+    this.worksService.addWorks(
+      form.value.title,
+      form.value.genre,
+      form.value.content,
+      '',
+      ''
+    );
   }
 }

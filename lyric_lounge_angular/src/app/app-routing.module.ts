@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: '',
     component: WelcomeComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   { path: 'home', component: WelcomeComponent },
   { path: 'login', component: LoginComponent },
@@ -20,22 +20,22 @@ const routes: Routes = [
   {
     path: 'list',
     component: WorksComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'works/:id',
     component: WorksComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'works',
     component: WorkItemComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'create',
     component: WorksCreateComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];

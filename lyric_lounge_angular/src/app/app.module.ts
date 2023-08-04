@@ -39,7 +39,7 @@ import { AuthService } from './services/auth.service';
   exports: [
     ReactiveFormsModule
   ],
-  providers: [AuthService, WorksService],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

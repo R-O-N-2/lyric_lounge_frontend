@@ -1,26 +1,58 @@
-<div class="row card">
-  <div class="col-xs-12">
-    <form #worksForm="ngForm">
-      <div class="row">
-        <div class="col-md-5 form-group">
-          <label for="title">Title</label>
-          <input type="text" id="title" class="form-control" />
+<div class="d-flex justify-content-center mt-5">
+  <div class="row card">
+    <div class="col-xs-12">
+      <form (submit)="addWork(workForm)" #workForm="ngForm">
+        <div class="row">
+          <div class="col-md-5 form-group">
+            <label for="title">Title</label>
+            <input
+              type="text"
+              name="title"
+              class="form-control"
+              ngModel
+              required
+              minlength="10"
+              #title="ngModel"
+            />
+            <div *ngIf="title.invalid" class="invalid-feedback">
+              Enter a title
+            </div>
+          </div>
+          <div class="col-sm-2 form-group">
+            <label for="genre">Genre</label>
+            <input
+              type="text"
+              name="genre"
+              class="form-control"
+              ngModel
+              required
+              #genre="ngModel"
+            />
+            <div *ngIf="genre.invalid" class="invalid-feedback">
+              Choose a genre
+            </div>
+          </div>
+          <div class="col-md-5 form-group">
+            <label for="content">Content</label>
+            <textarea
+              rows="4"
+              name="content"
+              class="form-control"
+              ngModel
+              required
+              #content="ngModel"
+            ></textarea>
+            <div *ngIf="content.invalid" class="invalid-feedback">
+              Write something fire
+            </div>
+          </div>
         </div>
-        <div class="col-sm-2 form-group">
-          <label for="genre">Genre</label>
-          <input type="text" id="genre" class="form-control" />
+        <div class="row">
+          <div class="col-xs-12">
+            <button class="btn btn-success" type="submit">Add</button>
+          </div>
         </div>
-        <div class="col-md-5 form-group">
-          <label for="content">Content</label>
-          <input type="text" id="content" class="form-control" />
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <button class="btn btn-success" type="submit">Add</button>
-          <button class="btn btn-danger" type="button">Delete</button>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 </div>

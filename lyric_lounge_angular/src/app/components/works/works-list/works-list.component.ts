@@ -1,5 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Work } from 'src/app/models/works.model';
 import { WorksService } from 'src/app/services/works.service';
@@ -9,30 +8,22 @@ import { WorksService } from 'src/app/services/works.service';
   templateUrl: './works-list.component.html',
   styleUrls: ['./works-list.component.scss'],
 })
-export class WorksListComponent implements OnInit {
-  works: Work[] = []
+export class WorksListComponent implements OnInit, OnDestroy {
+  works: Work[] = [];
+  private worksSub: Subscription;
 
   constructor(public worksService: WorksService) {}
-
-  ngOnInit(): void {
-    this.worksService.getWorks().subscribe({
-      next: (response) => (this.works = response),
-      error: (error) => console.log(error),
-      complete: () => {
-        console.log('request completed');
-        console.log('extra statment');
-      },
-    });
+  
+  ngOnDestroy(): void {
+    this.worksSub.unsubscribe();
   }
 
-  getWorks() {
-    return this.worksService.getWorks().subscribe({
-      next: (response) => (this.works = response),
-      error: (error) => console.log(error),
-      complete: () => {
-        console.log('request completed');
-        console.log('extra statment');
-      },
-    });
+  ngOnInit(): void {
+    this.works = this.worksService.getWorks();
+    this.worksSub = this.worksService
+      .getWorksUpdateListener()
+      .subscribe((works: Work[]) => {
+        this.works = works;
+      });
   }
 }
